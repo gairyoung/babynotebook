@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>隐私政策 · 宝宝喂养日记</title>
+<title>隐私政策 · 谷哩喂养日记</title>
 <style>
   body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
          max-width: 720px; margin: 0 auto; padding: 32px 20px 64px;
@@ -14,38 +14,106 @@
   .meta { font-size: 13px; color: #a09580; }
   a { color: #c47a4a; }
   nav { font-size: 13px; margin-bottom: 24px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  th, td { border: 1px solid #e8ded0; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f6efe4; font-weight: 600; }
 </style>
 </head>
 <body>
-<nav><a href="index.html">← 宝宝喂养日记</a></nav>
+<nav><a href="index.html">← 谷哩喂养日记</a></nav>
 <h1>隐私政策</h1>
-<p class="meta">更新日期：2026 年 8 月 10 日</p>
+<p class="meta">适用于 iOS 1.2.0 及后续版本 · 更新日期：2026 年 9 月 13 日</p>
 
-<h2>1. 我们如何存储你的记录</h2>
-<p>喂养、睡眠、便尿、成长档案等全部记录仅保存在你的设备本地和你本人的 iCloud 私有数据库中。开发者没有存储这些记录的业务服务器，无法查看、收集或恢复你的任何记录内容。</p>
+<p>杭州谷哩科技有限公司（以下称「我们」）非常重视你的个人信息保护。本政策说明谷哩喂养日记
+iOS 版如何收集、使用、存储和保护你的信息。请你在使用前仔细阅读。</p>
 
-<h2>2. 家庭共享</h2>
-<p>你主动发起家庭共享后，记录通过 Apple CloudKit 官方共享通道同步给你邀请的家庭成员；共享范围与停止共享均由你控制。</p>
+<h2>1. 账号与手机号</h2>
+<p>使用云端同步与家庭共享功能需要先登录。登录方式为<strong>手机号一键登录</strong>（由运营商校验本机号码）或<strong>手机号 + 短信验证码</strong>；也支持<strong>通过 Apple 登录</strong>。
+我们通过阿里云短信服务与号码认证服务完成验证，并在云端保存你的用户标识（uid）与手机号，
+用于识别你的身份、在你更换或重装设备后找回你的家庭数据。你的手机号仅用于登录与账号找回，
+不会用于营销推送，也不会提供给任何第三方用于商业用途。</p>
 
-<h2>3. 统计分析与崩溃诊断</h2>
-<p>为改进产品体验、定位崩溃提升稳定性，<strong>在你同意后</strong>，App 集成以下三家第三方 SDK：友盟（Umeng+）统计 SDK 与 Countly iOS SDK 收集设备型号、系统与 App 版本、应用内设备标识（IDFV）、匿名会话、页面访问和功能操作事件；阿里云 EMAS 移动监控 SDK（崩溃分析 + 性能分析服务）收集崩溃与异常诊断信息、App 启动/页面/网络请求的性能数据、设备信息（CPU、品牌、型号、分辨率）、系统信息（系统版本、语言）、网络信息（运营商、网络类型）、MAC 地址、IP 地址及 SDK 生成的设备标识。Countly 数据仅发送到杭州谷哩科技在中国境内自建的 analytics.guliriji.com 服务，不发送给 Countly 公司；上述数据均存储于中国境内。</p>
-<p>以上数据均不包含你的任何喂养记录内容，不使用 IDFA，不用于广告或跨 App 追踪，也不与你的个人身份关联。你可在 App 内「档案 → 系统权限 → 统计分析」随时关闭；关闭后 App 停止相关采集，且下次启动不再初始化相关 SDK。选择「仅基本功能」或关闭后，App 全部功能仍可正常使用。</p>
+<h2>2. 我们如何存储你的记录</h2>
+<p>喂奶、睡眠、便尿、拍嗝、成长档案、每日照片与疫苗记录先保存在你的设备本地，断网时仍可记录。未登录时不上传业务记录；登录并创建或加入家庭后，记录与照片会自动备份至我们在阿里云中国境内部署的服务，用于家庭共享、多设备同步与换机恢复。iOS 1.2.0 采用此方式；旧版 iOS 的 iCloud 数据用于历史数据恢复与迁移。</p>
+<p>云端保存的业务数据集合包括：</p>
+<table>
+  <tr><th>集合</th><th>内容</th></tr>
+  <tr><td>families</td><td>家庭档案与全家统一设置</td></tr>
+  <tr><td>babies</td><td>宝宝昵称、生日、性别等档案信息</td></tr>
+  <tr><td>events</td><td>喂养、睡眠、便尿、拍嗝等记录</td></tr>
+  <tr><td>growthRecords</td><td>身高、体重、头围等成长记录</td></tr>
+  <tr><td>dayPhotos</td><td>你主动添加的每日照片</td></tr>
+  <tr><td>vaccineRecords</td><td>疫苗接种记录</td></tr>
+  <tr><td>customEventTypes</td><td>你自定义的记录类型</td></tr>
+  <tr><td>familyMembers</td><td>成员的用户标识、昵称、角色、加入时间与所属平台</td></tr>
+</table>
+<p>这些记录仅用于提供记录、恢复与家庭同步服务，不用于广告。你可在「数据与恢复」查看备份与同步状态。</p>
+<h2>3. 家庭共享</h2>
+<p>你主动创建家庭或接受邀请后，家庭成员可以共同查看和记录家庭数据。家庭创建者可邀请、移除成员，成员也可主动退出；服务端根据当前成员身份与所属家庭限制访问。</p>
 
-<h2>4. 第三方 SDK 说明</h2>
-<p>SDK 名称：友盟+ SDK（UMCommon 基础库 + UMDevice 设备标识）。服务类型：App 匿名使用统计分析。收集个人信息类型：设备信息（设备型号、系统版本、应用内设备标识 IDFV）、App 使用数据（启动与使用时长、页面停留、自定义事件）。隐私权政策链接：<a href="https://www.umeng.com/page/policy" rel="noopener">https://www.umeng.com/page/policy</a></p>
-<p>SDK 名称：Countly iOS SDK。服务类型：匿名会话、页面与功能事件统计。收集个人信息类型：设备型号、系统与 App 版本、应用内设备标识 IDFV、匿名会话、页面访问和功能操作事件。数据仅进入杭州谷哩科技在中国境内自建的 Countly 服务，Countly 公司不接收这些统计数据。隐私权政策链接：<a href="https://countly.com/legal/privacy-policy" rel="noopener">https://countly.com/legal/privacy-policy</a></p>
-<p>SDK 名称：阿里云 EMAS 移动监控 SDK。服务类型：崩溃与异常诊断、App 启动/页面/网络请求性能监测。收集个人信息类型：设备信息（CPU、品牌、型号、分辨率）、系统信息（系统版本、语言）、网络信息（运营商、网络类型）、MAC 地址、IP 地址。隐私权政策链接：<a href="https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html" rel="noopener">https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html</a></p>
+<h2>4. 第三方 SDK 与云服务说明</h2>
+<p>我们的云端服务（账号、家庭共享、记录同步、图片存储）运行在<strong>阿里云</strong>，
+由杭州谷哩科技自行开发和运维，数据存储于中国境内。除此之外，App 集成以下第三方 SDK：</p>
+
+<table>
+  <tr><th>SDK / 服务</th><th>用途</th><th>收集的信息</th><th>平台</th></tr>
+  <tr>
+    <td>阿里云号码认证</td>
+    <td>手机号一键登录（取号校验）</td>
+    <td>本机号码标识、运营商网络信息、设备标识</td>
+    <td>iOS</td>
+  </tr>
+  <tr>
+    <td>阿里云 EMAS 移动推送</td>
+    <td>家人记录变更的实时提醒</td>
+    <td>设备标识、推送 Token</td>
+    <td>iOS</td>
+  </tr>
+  <tr>
+    <td>阿里云 EMAS 移动监控</td>
+    <td>崩溃、非闪退业务异常与性能分析，用于发现并修复故障</td>
+    <td>脱敏异常类型、结构化原因与调用栈；失败流程、步骤、状态及字段类型/缺失情况等结构证据；请求、事件、操作和启动关联标识（如 requestId、eventId、traceId、launchId）；渠道、版本、构建号；启动/网络耗时、设备及系统信息、网络类型、IP 等 SDK 诊断信息。不上传记录正文、照片、自定义事项名称或备注</td>
+    <td>iOS</td>
+  </tr>
+  <tr>
+    <td>友盟 U-App（UMCommon / UMDevice）</td>
+    <td>匿名使用统计，用于改进功能</td>
+    <td>设备型号、系统版本、IDFV 等应用内标识符、页面与功能使用情况</td>
+    <td>iOS</td>
+  </tr>
+</table>
+
+<p>统计分析与 EMAS 移动监控在你同意后启用。首次启动可选择「仅使用基本功能」，也可在「档案 → 系统权限 → 统计分析」关闭。关闭后 App 立即停止上报并停止向 SDK 提供数据，下次启动不再初始化相关统计与监控 SDK。家庭变更推送用于同步服务，不包含记录正文，系统通知仍受通知权限控制。号码认证仅在你同意登录协议并进入手机号登录流程后初始化。</p>
+<p>我们不将设备标识用于广告，不使用 IDFA，不进行跨 App 广告追踪，不将记录正文提供给第三方用于商业用途。第三方政策：<a href="https://www.umeng.com/page/policy">友盟隐私政策</a>、<a href="https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html">阿里云隐私政策</a>。</p>
 
 <h2>5. 系统权限</h2>
-<p>相机：仅用于扫描家人的邀请二维码；通知：用于喂奶提醒与家人动态；闹钟（AlarmKit）：用于母乳定时提醒。以上权限均按需申请，拒绝授权不影响其余功能。</p>
+<p>以下权限按对应功能与系统版本申请；拒绝某项权限会影响对应功能，不影响其他基础记录功能。</p>
+<table>
+<tr><th>权限 / 系统能力</th><th>用途与申请场景</th></tr>
+<tr><td>相机（iOS）</td><td>主动打开扫码加入家庭时，用于扫描家庭邀请二维码；不用于医疗测量或诊断。</td></tr>
+<tr><td>照片 / 相册（iOS）</td><td>主动选择每日照片或保存分享图片时使用。仅处理你选择或保存的图片。</td></tr>
+<tr><td>通知（iOS）</td><td>用于喂养、疫苗等本地提醒，以及通过 EMAS 移动推送送达的不含记录正文的家人动态提示。</td></tr>
+<tr><td>闹钟 AlarmKit（支持的 iOS 版本）</td><td>用于母乳单侧到点提醒，使用相关提醒功能时申请系统授权。</td></tr>
+</table>
+<p>联网、网络状态、振动等普通系统能力用于云同步、登录、推送与操作反馈，不等同于相机或照片等敏感权限授权。</p>
 
 <h2>6. 儿童信息</h2>
-<p>App 的记录对象为婴幼儿，但设计供成年监护人使用。宝宝的姓名、生日等档案信息同样仅存于你的设备与 iCloud，开发者无法获取。</p>
+<p>App 的记录对象为婴幼儿，但设计供成年监护人使用。宝宝的昵称、生日等档案信息由你自愿填写，
+先保存在你的设备；登录并绑定家庭后按前述规则备份至云端，与家庭成员共享。我们不会将儿童信息用于
+任何商业目的。若你是未成年人的监护人并对相关信息处理有疑问，可随时通过下方邮箱联系我们。</p>
 
-<h2>7. 数据删除</h2>
-<p>删除 App 内记录或在 iOS 设置中删除本 App 的 iCloud 数据，即可彻底清除；无需向开发者申请。</p>
+<h2>7. 数据删除与账号注销</h2>
+<p>你可以在 App 内删除记录；设备恢复连接后，删除会传递给家庭云端与其他成员设备。</p>
+<p>注销无需通过邮件申请：请进入「档案 → 我的账号」，在账号页面底部选择「注销账号」，按向导验证身份并确认。系统根据你是普通成员还是家庭创建者，处理账号、成员身份及可关联的云端数据；需要时按页面提示安排家庭接手人。注销不等于删除全家的所有记录，也不会自动删除这台手机上的本地记录，具体处理范围以注销确认页为准。</p>
+<p>历史 iCloud 副本可在 iOS 系统设置中管理。卸载或清除本机数据前，请先在「数据与恢复」确认备份状态；没有备份的本地记录可能无法恢复。下方邮箱用于隐私咨询和问题协助，不是注销的唯一入口。</p>
 
-<h2>8. 政策变更与联系方式</h2>
-<p>本政策如有变更将在本页面更新。任何隐私相关问题可联系开发者：<a href="mailto:gulitech@126.com">gulitech@126.com</a>。</p>
+<h2>8. 我们如何保护你的信息</h2>
+<p>所有客户端与云端之间的通信均使用 HTTPS 加密传输。云端写入统一经由云函数网关，并在服务端
+校验登录状态与家庭成员身份，拒绝跨家庭的越权读写。</p>
+
+<h2>9. 政策变更与联系方式</h2>
+<p>本政策如有变更将在本页面更新并标注更新日期。任何隐私相关问题，可联系：</p>
+<p>杭州谷哩科技有限公司<br>
+邮箱：<a href="mailto:gulitech@126.com">gulitech@126.com</a></p>
 </body>
 </html>
